@@ -103,3 +103,7 @@
 .close-btn:hover {
     background-color: #004ccc;
 }
+
+.error {
+    color: red;
+}

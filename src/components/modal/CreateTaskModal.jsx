@@ -9,18 +9,27 @@ const CreateTaskModal = ({ closeModal, onCreate }) => {
 
     const handleSave = async () => {
         setError('');
-
+    
+        if (!taskTitle.trim()) {
+            setError('Task title is required.');
+            return;
+        }
+        if (!taskDescription.trim()) {
+            setError('Task description is required.');
+            return;
+        }
+    
         try {
             const response = await createTask({
-                title: taskTitle,
-                description: taskDescription,
+                title: taskTitle.trim(),
+                description: taskDescription.trim(),
             });
             onCreate(response);
             closeModal();
         } catch (err) {
             setError(err.message || 'Failed to save the task.');
         }
-    };
+    };    
 
     return (
         <div className="modal-overlay">
@@ -34,6 +43,7 @@ const CreateTaskModal = ({ closeModal, onCreate }) => {
                             value={taskTitle}
                             onChange={(e) => setTaskTitle(e.target.value)}
                             placeholder="Enter task title"
+                            required
                         />
                     </label>
                     <label>Task Description
@@ -41,6 +51,7 @@ const CreateTaskModal = ({ closeModal, onCreate }) => {
                             value={taskDescription}
                             onChange={(e) => setTaskDescription(e.target.value)}
                             placeholder="Enter task description"
+                            required
                         />
                     </label>
                     <div className="modal-buttons">
