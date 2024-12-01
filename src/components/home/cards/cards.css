@@ -1,0 +1,73 @@
+h3 {
+    margin: 0;
+}
+
+.card {
+    background-color: white;
+    box-shadow: 0 4px 8px #c8b9b9;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 16px;
+}
+
+.heading {
+    background-color: #0066ff;
+    color: white;
+    padding: 6px;
+}
+
+.task-card {
+    box-shadow: 0 0 5px #c8b9b9;
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 20px;
+    background-color: #0053ff14;
+}
+
+.task-header h4 {
+    margin: 0;
+    color: #333;
+}
+
+.task-description p {
+    color: #666;
+    margin: 8px 0;
+}
+
+.task-date p {
+    color: #999;
+    font-size: 14px;
+}
+
+.task-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+.action-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action-btn.edit {
+    background-color: #008cba;
+    color: white;
+    margin: 0 10px;
+}
+
+.action-btn.delete {
+    background-color: #f44336;
+    color: white;
+}
+
+.action-btn.view {
+    background-color: #0066ff;
+    color: white;
+}
+
+.action-btn:hover {
+    opacity: 0.8;
+}

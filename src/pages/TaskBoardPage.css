@@ -1,0 +1,107 @@
+.add-task-button {
+    padding: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.primary {
+    background-color: #0066ff;
+    color: white;
+}
+
+.primary:hover {
+    background-color: #004ccc;
+}
+
+.home-cards {
+    display: flex;
+    margin: 0 40px;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.home-cards>div {
+    flex: 1;
+    min-width: 250px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1200px) {
+    .home-cards {
+        margin: 0 20px;
+    }
+
+    .search-container {
+        margin: 0 20px;
+    }
+
+    .add-task-button {
+        padding: 20px;
+    }
+
+    .btn {
+        padding: 0.4rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .add-task-button {
+        padding: 15px;
+        justify-content: flex-start;
+    }
+
+    .btn {
+        padding: 0.3rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .primary {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .add-task-button {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .btn {
+        padding: 0.3rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .primary {
+        width: 100%;
+    }
+
+    .home-cards {
+        margin: 0 10px;
+        gap: 10px;
+    }
+
+    .search-container {
+        margin: 0 10px;
+    }
+
+    .home-cards>div {
+        min-width: 100%;
+    }
+}
+
+
