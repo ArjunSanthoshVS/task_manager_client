@@ -58,7 +58,6 @@ const Signup = () => {
     const handleGoogleSuccess = async (credentialResponse) => {
         try {
             setLoading(true);
-            // Send the Google credential token to your backend for verification and user login/registration
             const response = await googleLogin({ googleToken: credentialResponse.credential });
 
             setLoading(false);

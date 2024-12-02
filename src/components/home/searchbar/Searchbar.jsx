@@ -5,12 +5,10 @@ const Searchbar = ({ tasks, onFilter }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [sortKey, setSortKey] = useState('');
 
-    // Handle search query changes
     const handleSearchChange = (event) => {
         const query = event.target.value;
         setSearchQuery(query);
 
-        // Filter tasks based on query
         const lowerCaseQuery = query.toLowerCase();
         const filtered = Object.keys(tasks).reduce((acc, key) => {
             acc[key] = tasks[key].filter((task) =>
@@ -21,12 +19,10 @@ const Searchbar = ({ tasks, onFilter }) => {
         onFilter(filtered);
     };
 
-    // Handle sort changes
     const handleSortChange = (event) => {
         const key = event.target.value;
         setSortKey(key);
 
-        // Sort tasks based on selected key
         const sorted = Object.keys(tasks).reduce((acc, columnKey) => {
             acc[columnKey] = [...tasks[columnKey]].sort((a, b) => {
                 if (key === 'name') {
@@ -43,7 +39,6 @@ const Searchbar = ({ tasks, onFilter }) => {
 
     return (
         <div className="search-container">
-            {/* Left Section: Search Bar */}
             <div className="left-search">
                 <label htmlFor="search-input" className="search-label">
                     Search:
@@ -58,7 +53,6 @@ const Searchbar = ({ tasks, onFilter }) => {
                 />
             </div>
 
-            {/* Right Section: Sort Dropdown */}
             <div className="right-search">
                 <label htmlFor="sort-select" className="sort-label">
                     Sort By:
